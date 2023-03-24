@@ -135,7 +135,7 @@ spec:
           httpGet:
             path: /api/v1/health
             port: 2020
-          periodSeconds: 240
+          periodSeconds: 300
           timeoutSeconds: 5
         readinessProbe:
           initialDelaySeconds: 10
