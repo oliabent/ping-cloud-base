@@ -116,9 +116,9 @@ _Changes:_
 - [X] PDO-5080 Test that file has been copied is not working in init container
 - [X] PDO-5104 Update Prometheus CPU/MEM limits
 - [X] PDO-5141 Fix the ArgoCD App name
+- [X] PDO-5144 Add logstash/fluent-bit readiness/liveness probe
 - [X] PDO-5147 Add logstash metrics to prometheus
 - [X] PDO-5148 Modify Prometheus query for all backup alerting to only include the primary pod
-- [X] PDO-5144 Add logstash/fluent-bit readiness/liveness probe
 
 ### 1.17.0.0
 
