@@ -131,11 +131,11 @@ spec:
                   name: cluster-info
                   key: newrelic_cluster_name
         livenessProbe:
-          failureThreshold: 3
+          failureThreshold: 2
           httpGet:
             path: /api/v1/health
             port: 2020
-          periodSeconds: 180
+          periodSeconds: 240
           timeoutSeconds: 5
         readinessProbe:
           initialDelaySeconds: 10
