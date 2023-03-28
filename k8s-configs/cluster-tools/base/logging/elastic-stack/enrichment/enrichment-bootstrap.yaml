@@ -76,7 +76,7 @@ spec:
           value: "/usr/share/elasticsearch/data/config"
         # Service checking related env vars
         - name: CHECK_SERVICE_URL
-          value: "http://elasticsearch"
+          value: "http://opensearch-cluster-master"
         - name: CHECK_SERVICE_PORT
           value: "9200"
         - name: DESIRED_STATUS
