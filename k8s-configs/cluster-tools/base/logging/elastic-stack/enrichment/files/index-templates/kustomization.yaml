@@ -2,7 +2,7 @@ kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 
 configMapGenerator:
-  - name: enrichment-opensearch-index-templates-old
+  - name: enrichment-elasticsearch-index-templates
     files:
       - alerts.json
       - healthchecks.json
