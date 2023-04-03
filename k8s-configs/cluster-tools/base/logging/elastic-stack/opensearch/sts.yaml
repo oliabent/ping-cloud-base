@@ -60,9 +60,6 @@ spec:
       - name: security-config-data
         secret:
           secretName: opensearch-securityconfig
-      - name: ism-policies
-        configMap:
-          name: enrichment-opensearch-ism-policies
       enableServiceLinks: false
       containers:
       - name: "opensearch"
@@ -133,9 +130,6 @@ spec:
         - name: config
           mountPath: /usr/share/opensearch/config/opensearch.yml
           subPath: opensearch.yml
-        - name: ism-policies
-          mountPath: /usr/share/opensearch/data/ism-policies
-          readOnly: false
 
 ---
 
