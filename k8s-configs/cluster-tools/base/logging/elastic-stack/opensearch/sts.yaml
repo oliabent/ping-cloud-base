@@ -61,8 +61,8 @@ spec:
         secret:
           secretName: opensearch-securityconfig
       - name: ism-policies
-          configMap:
-            name: enrichment-opensearch-ism-policies
+        configMap:
+          name: enrichment-opensearch-ism-policies
       enableServiceLinks: false
       containers:
       - name: "opensearch"
