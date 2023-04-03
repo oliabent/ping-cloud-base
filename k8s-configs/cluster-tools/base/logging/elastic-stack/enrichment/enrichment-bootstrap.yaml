@@ -132,7 +132,7 @@ spec:
             - name: CHECK_OS_DASH_URL
               value: "http://opensearch-dashboards:5601/api/status"
             - name: CHECK_OPENSEARCH_URL
-              value: "opensearch-cluster-master:9200/_cluster/health"
+              value: "https://opensearch-cluster-master:9200/_cluster/health"
             - name: RETRY_OS_DASH_BOOTSTRAP_SEC
               value: "30"
           securityContext:
