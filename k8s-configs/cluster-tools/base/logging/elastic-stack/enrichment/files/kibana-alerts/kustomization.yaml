@@ -21,3 +21,6 @@ configMapGenerator:
   - name: kibana-alerts-pf
     files:
       - 04-pf-rules.ndjson
+  - name: os-dash-alerts-pd
+    files:
+      - 1test.ndjson
