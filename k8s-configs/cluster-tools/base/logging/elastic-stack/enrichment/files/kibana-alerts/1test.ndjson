@@ -13,7 +13,7 @@
       {
          "search": {
             "indices": [
-               "logstash"
+               "1test-2023.04.04-000001"
             ],
             "query": {
                "query": {
