@@ -140,9 +140,9 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             allowPrivilegeEscalation: false
-          # volumeMounts:
-          #   - name: os-dashboards-pa
-          #     mountPath: /scripts/dashboards/pa
+          volumeMounts:
+            - name: os-dashboards-pd
+              mountPath: /scripts/dashboards/pd
           #   - name: os-dashboards-pd
           #     mountPath: /scripts/dashboards/pd
           #   - name: os-dashboards-pf
@@ -165,10 +165,10 @@ spec:
               memory: "512Mi"
               cpu: "500m"
       restartPolicy: OnFailure
-      # volumes:
-      #   - name: os-dashboards-pa
-      #     configMap:
-      #       name: os-dashboards-pa
+      volumes:
+        - name: os-dashboards-pd
+          configMap:
+            name: os-dashboards-pd
       #   - name: os-dashboards-pd
       #     configMap:
       #       name: os-dashboards-pd
