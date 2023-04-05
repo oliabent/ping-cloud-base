@@ -48,6 +48,7 @@
 - Fix test that file has been copied is not working in init container
 - OpenSearch installed in cluster
 - OpenSearch migration: Migrate index templates
+- OpenSearch migration: Rewrite bootstrap scripts
 
 _Changes:_
 
@@ -104,6 +105,7 @@ _Changes:_
 - [X] PDO-5104 Update Prometheus CPU/MEM limits
 - [X] PDO-5110 Install Opensearch side-by-side with Elastic
 - [X] PDO-5112 OpenSearch migration: Migrate index templates
+- [X] PDO-5152 OpenSearch migration: Rewrite bootstrap scripts
 
 ### 1.17.0.0
 
