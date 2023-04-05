@@ -151,8 +151,8 @@ spec:
               mountPath: /scripts/index-templates
           #   - name: os-dash-alerts-common
           #     mountPath: /scripts/alerts/common
-            - name: os-dash-alerts-pd
-              mountPath: /scripts/alerts/pd
+          #   - name: os-dash-alerts-pd
+          #     mountPath: /scripts/alerts/pd
           #   - name: os-dash-alerts-pds
           #     mountPath: /scripts/alerts/pds
           #   - name: os-dash-alerts-pf
@@ -169,24 +169,24 @@ spec:
         - name: os-dashboards-pd
           configMap:
             name: os-dashboards-pd
-      #   - name: os-dashboards-pd
-      #     configMap:
-      #       name: os-dashboards-pd
-      #   - name: os-dashboards-pf
-      #     configMap:
-      #       name: os-dashboards-pf
-      #   - name: os-dash-alerts-common
-      #     configMap:
-      #       name: os-dash-alerts-common
-        - name: os-dash-alerts-pd
-          configMap:
-            name: os-dash-alerts-pd
-      #   - name: os-dash-alerts-pds
-      #     configMap:
-      #       name: os-dash-alerts-pds
-      #   - name: os-dash-alerts-pf
-      #     configMap:
-      #       name: os-dash-alerts-pf
+        # - name: os-dashboards-pd
+        #   configMap:
+        #     name: os-dashboards-pd
+        # - name: os-dashboards-pf
+        #   configMap:
+        #     name: os-dashboards-pf
+        # - name: os-dash-alerts-common
+        #   configMap:
+        #     name: os-dash-alerts-common
+        # - name: os-dash-alerts-pd
+        #   configMap:
+        #     name: os-dash-alerts-pd
+        # - name: os-dash-alerts-pds
+        #   configMap:
+        #     name: os-dash-alerts-pds
+        # - name: os-dash-alerts-pf
+        #   configMap:
+        #     name: os-dash-alerts-pf
         - name: enrichment-opensearch-index-templates
           configMap:
             name: enrichment-opensearch-index-templates
