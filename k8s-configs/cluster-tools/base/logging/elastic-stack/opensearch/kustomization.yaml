@@ -11,6 +11,6 @@ resources:
 - service.yaml
 - sts.yaml
 - index-templates
-- ism-policies
 - storageclass.yaml
+- ism-policies
 
