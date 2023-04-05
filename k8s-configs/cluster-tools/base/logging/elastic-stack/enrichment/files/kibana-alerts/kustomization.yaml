@@ -24,3 +24,4 @@ configMapGenerator:
   - name: os-dash-alerts-pd
     files:
       - 1test.ndjson
+      - 2test.ndjson
