@@ -60,8 +60,7 @@ spec:
       serviceAccountName: enrichment
       containers:
       - name: opensearch-bootstrap
-        #image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
-        image: 705370621539.dkr.ecr.us-west-2.amazonaws.com/pingcloud-monitoring/enrichment-bootstrap:PDO-5152
+        image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
         imagePullPolicy: Always
         workingDir: /scripts
         command: ["sh", '$(CONTAINER_NAME).sh']
@@ -117,8 +116,7 @@ spec:
       serviceAccountName: enrichment
       containers:
         - name: os-dash-bootstrap
-          #image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
-          image: 705370621539.dkr.ecr.us-west-2.amazonaws.com/pingcloud-monitoring/enrichment-bootstrap:PDO-5152
+          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
           imagePullPolicy: Always
           workingDir: /scripts
           command: [ "sh", '$(CONTAINER_NAME).sh' ]
