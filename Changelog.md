@@ -63,7 +63,9 @@
 - OpenSearch migration: Change logstash pipelines to send data to OS instead ES
 - OpenSearch migration: Rewrite bootstrap script
 - OpenSearch migration: enable TLS
+- OpenSearch migration: PA dashboard migrated from Elasticsearch to Opensearch
 - OpenSearch migration: Migrate PF dashboards
+
 
 _Changes:_
 
@@ -131,6 +133,7 @@ _Changes:_
 - [X] PDO-5110 Install Opensearch side-by-side with Elastic
 - [X] PDO-5112 OpenSearch migration: Migrate index templates
 - [X] PDO-5113 OpenSearch migration: Change logstash pipelines to send data to OS instead ES
+- [X] PDO-5114 OpenSearch migration: Migrate PA dashboard
 - [X] PDO-5116 OpenSearch migration: Migrate PF dashboards
 - [X] PDO-5124 Enable bootstrapping a new customer with ArgoCD
 - [X] PDO-5131 Pods (typically cloudwatch) Stuck in pending state
