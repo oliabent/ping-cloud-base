@@ -265,8 +265,8 @@ IMAGE_TAG_PREFIX=${IMAGE_TAG_PREFIX}
 IMAGE_LIST="apps=${ECR_REGISTRY_NAME}/pingcloud-apps/pingfederate,apps=${ECR_REGISTRY_NAME}/pingcloud-apps/pingaccess,apps=${ECR_REGISTRY_NAME}/pingcloud-apps/pingaccess-was"
 
 # Dashboards repo variables
-DASH_REPO_URL=https://github.com/oliabent/-ping-cloud-dashboards
-DASH_REPO_BRANCH=PDO-5116
+DASH_REPO_URL=https://github.com/pingidentity/ping-cloud-dashboards
+DASH_REPO_BRANCH=v1.18-dev-branch
 
 # Healthcheck variables
 CLUSTER_HEALTHCHECK_SCHEDULE="* * * * *"
