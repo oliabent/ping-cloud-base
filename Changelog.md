@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.18.1.0
+
+- Update kube-state-metrics to v2.7.0
+
+_Changes:_
+
+- [X] PDO-5279 Update kube-state-metrics cluster tool to v2.7.0 for EKS 1.25
 ### 1.18.0.0
 
 - Enable users to download or upload user reports in Delegated Admin
