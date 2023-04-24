@@ -64,7 +64,7 @@ spec:
         - --resources=volumeattachments
         - --telemetry-port=8081
         imagePullPolicy: IfNotPresent
-        image: public.ecr.aws/r2h3l6e4/pingcloud-clustertools/coreos/kube-state-metrics:v2.6.0
+        image: registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.7.0
         securityContext:
           privileged: false
           runAsGroup: 65534
