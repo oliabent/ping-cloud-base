@@ -12,7 +12,7 @@ metadata:
     helm.sh/chart: kube-state-metrics-4.23.0
     app.kubernetes.io/instance: nri-bundle
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/version: 2.6.0
+    app.kubernetes.io/version: 2.7.0
 spec:
   selector:
     matchLabels:
