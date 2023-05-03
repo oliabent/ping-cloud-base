@@ -1,0 +1,49 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: index-migration
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  template:
+    spec:
+      containers:
+      - name: index-migration
+        image: 705370621539.dkr.ecr.us-west-2.amazonaws.com/pingcloud-monitoring/index-migration:PDO-5145
+        imagePullPolicy: Always
+        workingDir: /scripts
+        command: ["python3", 'index-migration.py']
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+          runAsGroup: 1000
+          allowPrivilegeEscalation: false
+        env:
+        - name: OPENSEARCH_HOST
+          value: "opensearch-cluster-master"
+        - name: OPENSEARCH_PORT
+          value: "9200"
+        - name: CHECK_SERVICE_URL
+          value: "https://opensearch-cluster-master"
+        - name: OPENSEARCH_USER_NAME
+          value: "admin"
+        - name: OPENSEARCH_PASSWORD
+          value: "admin"
+
+        - name: ELASTICSEARCH_HOST
+          value: "elasticsearch"
+        - name: ELASTICSEARCH_PORT
+          value: "9200"
+        - name: STATUS_CHECK_SECONDS
+          value: "1"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "300m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+      restartPolicy: Never
