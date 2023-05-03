@@ -2,6 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
+  namespace: elastic-stack-logging
   name: index-migration
   annotations:
     argocd.argoproj.io/sync-options: Replace=true
@@ -29,16 +30,21 @@ spec:
         - name: CHECK_SERVICE_URL
           value: "https://opensearch-cluster-master"
         - name: OPENSEARCH_USER_NAME
-          value: "admin"
+          valueFrom:
+            secretKeyRef:
+              name: opensearch-creds
+              key: username
         - name: OPENSEARCH_PASSWORD
-          value: "admin"
-
+          valueFrom:
+            secretKeyRef:
+              name: opensearch-creds
+              key: password
         - name: ELASTICSEARCH_HOST
           value: "elasticsearch"
         - name: ELASTICSEARCH_PORT
           value: "9200"
         - name: STATUS_CHECK_SECONDS
-          value: "1"
+          value: "60"
         resources:
           requests:
             memory: "256Mi"
@@ -46,4 +52,4 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
-      restartPolicy: Never
+      restartPolicy: OnFailure

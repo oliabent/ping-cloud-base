@@ -9,3 +9,8 @@ resources:
 generatorOptions:
   disableNameSuffixHash: true
 
+secretGenerator:
+- name: opensearch-creds
+  literals:
+  - username=admin
+  - password=admin
