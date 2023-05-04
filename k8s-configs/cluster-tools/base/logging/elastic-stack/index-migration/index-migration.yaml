@@ -30,10 +30,7 @@ spec:
         - name: CHECK_SERVICE_URL
           value: "https://opensearch-cluster-master"
         - name: OPENSEARCH_USER_NAME
-          valueFrom:
-            secretKeyRef:
-              name: opensearch-creds
-              key: username
+          value: "admin"
         - name: OPENSEARCH_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -44,7 +41,7 @@ spec:
         - name: ELASTICSEARCH_PORT
           value: "9200"
         - name: STATUS_CHECK_SECONDS
-          value: "60"
+          value: "10"
         resources:
           requests:
             memory: "256Mi"
@@ -53,3 +50,15 @@ spec:
             memory: "512Mi"
             cpu: "500m"
       restartPolicy: OnFailure
+
+---
+apiVersion: v1
+data:
+  password: YWRtaW4=
+kind: Secret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/managed: "true"
+  name: opensearch-creds
+  namespace: elastic-stack-logging
+type: Opaque
