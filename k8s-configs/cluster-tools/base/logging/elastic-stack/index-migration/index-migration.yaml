@@ -12,7 +12,8 @@ spec:
         image: 705370621539.dkr.ecr.us-west-2.amazonaws.com/pingcloud-monitoring/index-migration:PDO-5145
         imagePullPolicy: Always
         workingDir: /scripts
-        command: ["python3", 'index-migration.py']
+        #command: ["python3", 'index-migration.py']
+        command: ["sleep", '5000']
         securityContext:
           runAsNonRoot: true
           runAsUser: 1000
@@ -28,7 +29,7 @@ spec:
         - name: OPENSEARCH_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: opensearch-creds
+              name: os-indexmigration-password
               key: password
         - name: ELASTICSEARCH_HOST
           value: "elasticsearch"
@@ -48,11 +49,11 @@ spec:
 ---
 apiVersion: v1
 data:
-  password: Ym5nVjg1cVtOUlN0PUUySyYmdHc=
+  password: Ym5nVjg1cVtOUnN0PUUySyYjdHc=
 kind: Secret
 metadata:
   annotations:
     sealedsecrets.bitnami.com/managed: "true"
-  name: opensearch-creds
+  name: os-indexmigration-password
   namespace: elastic-stack-logging
 type: Opaque
