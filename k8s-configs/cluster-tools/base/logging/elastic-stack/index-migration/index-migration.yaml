@@ -12,8 +12,7 @@ spec:
         image: 705370621539.dkr.ecr.us-west-2.amazonaws.com/pingcloud-monitoring/index-migration:PDO-5145
         imagePullPolicy: Always
         workingDir: /scripts
-        #command: ["python3", 'index-migration.py']
-        command: ["sleep", '5000']
+        command: ["python3", 'index-migration.py']
         securityContext:
           runAsNonRoot: true
           runAsUser: 1000
