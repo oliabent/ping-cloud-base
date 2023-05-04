@@ -4,10 +4,6 @@ kind: Job
 metadata:
   namespace: elastic-stack-logging
   name: index-migration
-  annotations:
-    argocd.argoproj.io/sync-options: Replace=true
-    argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 spec:
   template:
     spec:
@@ -27,8 +23,6 @@ spec:
           value: "opensearch-cluster-master"
         - name: OPENSEARCH_PORT
           value: "9200"
-        - name: CHECK_SERVICE_URL
-          value: "https://opensearch-cluster-master"
         - name: OPENSEARCH_USER_NAME
           value: "admin"
         - name: OPENSEARCH_PASSWORD
