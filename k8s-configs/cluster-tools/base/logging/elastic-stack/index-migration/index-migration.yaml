@@ -24,7 +24,7 @@ spec:
         - name: OPENSEARCH_PORT
           value: "9200"
         - name: OPENSEARCH_USER_NAME
-          value: "indexmigraion"
+          value: "indexmigration"
         - name: OPENSEARCH_PASSWORD
           valueFrom:
             secretKeyRef:
