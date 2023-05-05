@@ -53,5 +53,5 @@ snapshotrestore:
 
 indexmigration:
   hash: "$2y$12$nnNxuzpFcBlpO/FesnUA7O8oZRFF.zBZaBpKKk0zeokYOzq.Y4plu"
-  reserved: false
+  reserved: true
   description: "Index migration user"

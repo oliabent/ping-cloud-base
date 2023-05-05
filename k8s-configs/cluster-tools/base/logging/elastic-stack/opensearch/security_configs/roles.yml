@@ -318,22 +318,19 @@ opendistro_security_anonymous_role:
         - "kibana_all_read"
 
 # Allows index-migration.py script to perform indices migration from ElasticSearch to OpenSearch
-cross_cluster_replication_follower_full_access:
+index_migration:
   reserved: true
   cluster_permissions:
-        - "indices:admin/create"
+        - "create_index"
         - "indices:data/write/reindex"
         - "indices:data/write/index"
         - "cluster:monitor/task/get"
-        - "indices:admin/mapping/put"
         - "indices:data/write/bulk*"
   index_permissions:
     - index_patterns:
         - '*'
       allowed_actions:
-        - "indices:admin/create"
+        - "create_index"
         - "indices:data/write/reindex"
         - "indices:data/write/index"
-        - "cluster:monitor/task/get"
-        - "indices:admin/mapping/put"
         - "indices:data/write/bulk*"
