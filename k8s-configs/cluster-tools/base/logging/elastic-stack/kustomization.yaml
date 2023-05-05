@@ -6,9 +6,7 @@ namespace: elastic-stack-logging
 resources:
 - enrichment
 - namespace.yaml
-- kibana
 - logstash
-- elasticsearch
 - opensearch
 - os-dashboards
 
