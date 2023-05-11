@@ -84,6 +84,7 @@
 - OpenSearch migration: PA dashboard migrated from Elasticsearch to Opensearch
 - OpenSearch migration: Migrate PF dashboards
 - OpenSearch migration: Migrate alerts
+- OpenSearch migration: Add Opensearch internal_user/role/role_mapping for index-migration script
 
 
 _Changes:_
@@ -170,6 +171,7 @@ _Changes:_
 - [X] PDO-5142 Add logstash metrics to prometheus
 - [X] PDO-5143 Add logstash and fluent-bit alerts
 - [X] PDO-5144 Add logstash/fluent-bit readiness/liveness probe
+- [X] PDO-5145 OpenSearch migration: Develop index migration job
 - [X] PDO-5147 Add logstash metrics to prometheus
 - [X] PDO-5148 Modify Prometheus query for all backup alerting to only include the primary pod
 - [X] PDO-5191 Update image_map to align with tagging process
