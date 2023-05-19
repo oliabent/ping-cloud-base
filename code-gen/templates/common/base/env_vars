@@ -50,6 +50,7 @@ PGO_BACKUP_BUCKET_NAME=${PGO_BACKUP_BUCKET_NAME}
 PLATFORM_EVENT_QUEUE_NAME=${PLATFORM_EVENT_QUEUE_NAME}
 PLATFORM_EVENT_QUEUE_POLL_BATCH_SIZE=1
 PLATFORM_EVENT_QUEUE_POLL_INTERVAL_SECONDS=2
+CUSTOMER_SSO_SSM_PATH_PREFIX=${CUSTOMER_SSO_SSM_PATH_PREFIX}
 ORCH_API_SSM_PATH_PREFIX=${ORCH_API_SSM_PATH_PREFIX}
 SERVICE_SSM_PATH_PREFIX=${SERVICE_SSM_PATH_PREFIX}
 ARGOCD_CDE_ROLE_SSM_TEMPLATE=${ARGOCD_CDE_ROLE_SSM_TEMPLATE}
@@ -161,22 +162,22 @@ PING_IDENTITY_DEVOPS_KEY=${PING_IDENTITY_DEVOPS_KEY}
 ############################################################
 # Ping application image tags
 ############################################################
-PINGACCESS_IMAGE_TAG=v1.18-release-branch-latest
-PINGACCESS_WAS_IMAGE_TAG=v1.18-release-branch-latest
-PINGFEDERATE_IMAGE_TAG=v1.18-release-branch-latest
-PINGDIRECTORY_IMAGE_TAG=v1.18-release-branch-latest
-PINGDELEGATOR_IMAGE_TAG=v1.18-release-branch-latest
-PINGCENTRAL_IMAGE_TAG=v1.18-release-branch-latest
-PINGDATASYNC_IMAGE_TAG=v1.18-release-branch-latest
+PINGACCESS_IMAGE_TAG=v1.19-release-branch-latest
+PINGACCESS_WAS_IMAGE_TAG=v1.19-release-branch-latest
+PINGFEDERATE_IMAGE_TAG=v1.19-release-branch-latest
+PINGDIRECTORY_IMAGE_TAG=v1.19-release-branch-latest
+PINGDELEGATOR_IMAGE_TAG=v1.19-release-branch-latest
+PINGCENTRAL_IMAGE_TAG=v1.19-release-branch-latest
+PINGDATASYNC_IMAGE_TAG=v1.19-release-branch-latest
 
 ############################################################
 # Ping solution image tags
 ############################################################
-METADATA_IMAGE_TAG=v1.18-release-branch-latest
-BOOTSTRAP_IMAGE_TAG=v1.18-release-branch-latest
-HEALTHCHECK_IMAGE_TAG=v1.18-release-branch-latest
-P14C_INTEGRATION_IMAGE_TAG=v1.18-release-branch-latest
-ANSIBLE_BELUGA_IMAGE_TAG=v1.18-release-branch-latest
+METADATA_IMAGE_TAG=v1.19-release-branch-latest
+BOOTSTRAP_IMAGE_TAG=v1.19-release-branch-latest
+HEALTHCHECK_IMAGE_TAG=v1.19-release-branch-latest
+P14C_INTEGRATION_IMAGE_TAG=v1.19-release-branch-latest
+ANSIBLE_BELUGA_IMAGE_TAG=v1.19-release-branch-latest
 
 ############################################################
 # Cluster name variables
@@ -249,6 +250,7 @@ PROMETHEUS_PING_NAMESPACE=${PING_CLOUD_NAMESPACE}
 PF_PROVISIONING_ENABLED=${PF_PROVISIONING_ENABLED}
 
 RADIUS_PROXY_ENABLED=${RADIUS_PROXY_ENABLED}
+# List of ping apps(pingaccess,pingaccess-was,pingdirectory,pingdelegator,pingfederate) for which you can enable external ingress(the values are ping app names)Examplelist:(pingaccess pingdirectory pingfederate)   
 EXTERNAL_INGRESS_ENABLED=${EXTERNAL_INGRESS_ENABLED}
 ########################################################################################################################
 
@@ -263,7 +265,7 @@ PROM_SLACK_CHANNEL=${PROM_SLACK_CHANNEL}
 
 # Dashboards repo variables
 DASH_REPO_URL=https://github.com/pingidentity/ping-cloud-dashboards
-DASH_REPO_BRANCH=v1.18-dev-branch
+DASH_REPO_BRANCH=v1.19-dev-branch
 
 # Healthcheck variables
 CLUSTER_HEALTHCHECK_SCHEDULE="* * * * *"

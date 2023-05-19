@@ -23,7 +23,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             allowPrivilegeEscalation: false
-          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
+          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.19-release-branch-latest
           imagePullPolicy: Always
           command:
             - sh
@@ -57,7 +57,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             allowPrivilegeEscalation: false
-          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
+          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.19-release-branch-latest
           imagePullPolicy: Always
           workingDir: /scripts
           command:
@@ -90,7 +90,7 @@ spec:
               name: metrics
               protocol: TCP
         - name: logstash
-          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/logstash/dev:v1.18-release-branch-latest
+          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/logstash/dev:v1.19-release-branch-latest
           imagePullPolicy: Always
           securityContext:
             runAsNonRoot: true
@@ -173,7 +173,7 @@ spec:
             - name: enrichment-logstash-search-templates
               mountPath: /etc/logstash/templates
               readOnly: true
-            - name: opensearch-index-templates
+            - name: os-index-templates
               mountPath: /usr/share/logstash/index_templates
               readOnly: true
             - name: enrichment-cache-files
@@ -186,7 +186,7 @@ spec:
               mountPath: /usr/share/logstash/certs
         # Sidecar enrichment container which updates Logstash dictionaries
         - name: enrichment-sidecar
-          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.18-release-branch-latest
+          image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/enrichment-bootstrap/dev:v1.19-release-branch-latest
           imagePullPolicy: Always
           workingDir: /scripts
           command:
@@ -232,9 +232,9 @@ spec:
         - name: enrichment-logstash-search-templates
           configMap:
             name: enrichment-logstash-search-templates
-        - name: opensearch-index-templates
+        - name: os-index-templates
           configMap:
-            name: enrichment-opensearch-index-templates
+            name: os-index-templates
         - name: enrichment-cache
           configMap:
             name: enrichment-cache

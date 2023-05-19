@@ -1,5 +1,26 @@
 # Changelog
 
+### 1.19.0.0
+
+- Update bootstrap to create davinci-configuration secret
+- OpenSearch migration: Add Opensearch internal_user/role/role_mapping for index-migration script
+
+_Changes:_
+
+- PDO-5314 Update bootstrap to create davinci-configuration secret
+- [X] PDO-5110 OpenSearch migration: Install Opensearch side-by-side with Elastic
+- [X] PDO-5112 OpenSearch migration: Migrate index templates
+- [X] PDO-5113 OpenSearch migration: Change logstash pipelines to send data to OS instead ES
+- [X] PDO-5114 OpenSearch migration: Migrate PA dashboard
+- [X] PDO-5116 OpenSearch migration: Migrate PF dashboards
+- [X] PDO-5145 OpenSearch migration: Develop index migration job
+- [X] PDO-5152 OpenSearch migration: Rewrite bootstrap scripts
+- [X] PDO-5244 OpenSearch migration: Enable transport layer security
+- [X] PDO-5245 OpenSearch migration: Update grafana dashboards datasource
+- [X] PDO-5246 Opensearch migration: Migrate alerts
+- [X] PDO-5258 OpenSearch migration: Refactor bootstrap scripts
+- [X] PDO-5320 BUGFIX: found_distance_alert and other found* fields are not present in pf-audit* index documents
+
 ### 1.18.0.0
 
 - Enable users to download or upload user reports in Delegated Admin
@@ -76,16 +97,7 @@
 - Default ngnix hpa configuration in medium environment is lower than small
 - Fix cluster_name variable in Grafana Dashboards for CHUB
 - Remove PC resources from secondary customer-hub
-- OpenSearch installed in cluster
-- OpenSearch migration: Migrate index templates
-- OpenSearch migration: Change logstash pipelines to send data to OS instead ES
-- OpenSearch migration: Rewrite bootstrap script
-- OpenSearch migration: enable TLS
-- OpenSearch migration: PA dashboard migrated from Elasticsearch to Opensearch
-- OpenSearch migration: Migrate PF dashboards
-- OpenSearch migration: Migrate alerts
-- OpenSearch migration: Add Opensearch internal_user/role/role_mapping for index-migration script
-
+- Allow users to pick and enable only the external ingress they want. 
 
 _Changes:_
 
@@ -159,16 +171,10 @@ _Changes:_
 - [X] PDO-5090 Update default version of pf-pingid-integration-kit to 2.24.0 in PingFederate
 - [X] PDO-5104 Update Prometheus CPU/MEM limits
 - [X] PDO-5107 Fluent-bit pods stuck in pending state
-- [X] PDO-5110 Install Opensearch side-by-side with Elastic
-- [X] PDO-5112 OpenSearch migration: Migrate index templates
-- [X] PDO-5113 OpenSearch migration: Change logstash pipelines to send data to OS instead ES
-- [X] PDO-5114 OpenSearch migration: Migrate PA dashboard
-- [X] PDO-5116 OpenSearch migration: Migrate PF dashboards
 - [X] PDO-5124 Enable bootstrapping a new customer with ArgoCD
 - [X] PDO-5131 Pods (typically cloudwatch) Stuck in pending state
 - [X] PDO-5138 Add a new hook script '02-health-check.sh' to support readiness and liveness probes 
 - [X] PDO-5141 Fix the ArgoCD App name
-- [X] PDO-5142 Add logstash metrics to prometheus
 - [X] PDO-5143 Add logstash and fluent-bit alerts
 - [X] PDO-5144 Add logstash/fluent-bit readiness/liveness probe
 - [X] PDO-5145 OpenSearch migration: Develop index migration job
@@ -181,6 +187,7 @@ _Changes:_
 - [X] PDO-5248 Bug fix,remove-from-secondary-patch.yaml not getting applied
 - [X] PDO-5255 Allow configuration of certain ArgoCD values per-CDE
 - [X] PDO-5261 Remove PF and PA from pa-was config in customer-hub
+- [X] PDO-5262 Allow users to pick and enable only the external ingress they want.
 - [X] PDO-5263 Remove PC resources from secondary customer-hub
 - [X] PDO-5264 Set 7-day-retention policy to all backup jobs logs
 - [X] PDO-5271 Replace PSA privileged policy by more restricted policies for newrelic components if needed
@@ -188,12 +195,10 @@ _Changes:_
 - [X] PDO-5281 Default ngnix hpa configuration in medium environment is lower than small
 - [X] PDO-5288 Update health check. healthcheck should only test the resources that have been deployed
 - [X] PDO-5298 Bugfix - make scripts compatible with Debian
+- [X] PDO-5302 Fix PF multiline parsing
 - [X] PDO-5315 Bugfix - argocd-bootstrap to use region specific env vars
 - [X] PDO-5319 The cluster name is not displayed correctly in Grafana Dashboard for the CHUB cluster
-- [X] PDO-5152 OpenSearch migration: Rewrite bootstrap scripts
-- [X] PDO-5223 Remove pa-was config for ArgoCD from non customer-hub CDEs
-- [X] PDO-5244 OpenSearch migration: Enable transport layer security
-- [X] PDO-5246 Opensearch migration: migrate alerts
+
 
 ### 1.17.0.0
 
@@ -235,6 +240,7 @@ _Changes:_
 - Installed EBS CSI driver
 - Replace deprecated topologyKey
 - Add IngressClassName to replace the deprecated annotation
+- Fix PingFederate multiline logs parsing
 
 _Changes:_
 
