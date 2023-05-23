@@ -87,7 +87,6 @@ spec:
           initialDelaySeconds: 5
           timeoutSeconds: 5
 
-
 ---
 # Source: nri-bundle/charts/nri-metadata-injection/templates/deployment.yaml
 
