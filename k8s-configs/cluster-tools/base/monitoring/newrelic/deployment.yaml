@@ -43,7 +43,6 @@ spec:
         - --resources=horizontalpodautoscalers
         - --resources=ingresses
         - --resources=jobs
-        - --resources=leases
         - --resources=limitranges
         - --resources=mutatingwebhookconfigurations
         - --resources=namespaces
