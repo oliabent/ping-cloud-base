@@ -6,6 +6,7 @@
 - Updating kustomize build options within ArgoCD to support Helm
 - Fix: kubernetes-dashboards configmap "Too long" error
 - Add OpenSearch monitoring and alerting
+- Improve logstash grok patterns to prevent execution timeouts
 
 _Changes:_
 
@@ -20,6 +21,7 @@ _Changes:_
 - [X] PDO-5245 OpenSearch migration: Update grafana dashboards datasource
 - [X] PDO-5246 Opensearch migration: Migrate alerts
 - [X] PDO-5258 OpenSearch migration: Refactor bootstrap scripts
+- [X] PDO-5301 Logstash: Improve grok patterns to prevent execution timeouts
 - [X] PDO-5307 OpenSearch migration: Implement Monitoring
 - [X] PDO-5314 Update bootstrap to create davinci-configuration secret
 - [X] PDO-5320 BUGFIX: found_distance_alert and other found* fields are not present in pf-audit* index documents
