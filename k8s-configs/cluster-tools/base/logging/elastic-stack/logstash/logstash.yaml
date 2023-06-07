@@ -57,6 +57,11 @@ spec:
               value: '1'
             - name: PYTHONIOENCODING
               value: UTF-8
+            - name: S3_BUCKET
+              valueFrom:
+                  configMapKeyRef:
+                    name: s3-raw-logs-bucket
+                    key: bucketName
           volumeMounts:
             - name: enrichment-cache
               mountPath: /enrichment-cache
@@ -80,6 +85,11 @@ spec:
         - name: logstash
           image: public.ecr.aws/r2h3l6e4/pingcloud-monitoring/logstash/dev:v1.19-release-branch-latest
           imagePullPolicy: Always
+          command:
+            - "/bin/sh"
+          args:
+            - "-c"
+            - "S3_BUCKET_NAME=${S3_BUCKET#s3://}"
           securityContext:
             runAsNonRoot: true
             runAsUser: 1000
@@ -122,6 +132,16 @@ spec:
                 secretKeyRef:
                   key: password
                   name: os-logstash-creds
+            - name: S3_BUCKET
+              valueFrom:
+                  configMapKeyRef:
+                    name: s3-raw-logs-bucket
+                    key: bucketName
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: cluster-info
+                  key: logs.region
           envFrom:
             - configMapRef:
                 name: elk-environment-variables
