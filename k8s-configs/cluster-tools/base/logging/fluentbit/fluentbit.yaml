@@ -83,7 +83,7 @@ spec:
           - "/bin/sh"
         args:
           - "-c"
-          - "S3_BUCKET_NAME=${S3_BUCKET#s3://} /entrypoint.sh"
+          - "/entrypoint.sh"
         securityContext:
           capabilities:
             drop:
@@ -125,11 +125,6 @@ spec:
                 secretKeyRef:
                   name: nr-license-key
                   key: NEW_RELIC_LICENSE_KEY
-            - name: S3_BUCKET
-              valueFrom:
-                  configMapKeyRef:
-                    name: s3-raw-logs-bucket
-                    key: bucketName
             - name: NR_CLUSTER_NAME
               valueFrom:
                 configMapKeyRef:
