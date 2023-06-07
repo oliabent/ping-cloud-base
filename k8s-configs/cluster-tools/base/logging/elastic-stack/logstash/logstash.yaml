@@ -57,11 +57,6 @@ spec:
               value: '1'
             - name: PYTHONIOENCODING
               value: UTF-8
-            - name: S3_BUCKET
-              valueFrom:
-                  configMapKeyRef:
-                    name: s3-raw-logs-bucket
-                    key: bucketName
           volumeMounts:
             - name: enrichment-cache
               mountPath: /enrichment-cache
