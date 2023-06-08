@@ -180,6 +180,9 @@ spec:
             - name: logstash-pipeline-customer
               mountPath: /usr/share/logstash/pipeline/customer
               readOnly: true
+            - name: logstash-pipeline-s3
+              mountPath: /usr/share/logstash/pipeline/s3
+              readOnly: true
             - name: logstash-search-template
               mountPath: /etc/logstash/templates
               readOnly: true
@@ -236,6 +239,9 @@ spec:
         - name: logstash-pipeline-customer
           configMap:
             name: logstash-pipeline-customer
+        - name: logstash-pipeline-s3
+          configMap:
+            name: logstash-pipeline-s3
         - name: logstash-pipelines
           configMap:
             name: logstash-pipelines

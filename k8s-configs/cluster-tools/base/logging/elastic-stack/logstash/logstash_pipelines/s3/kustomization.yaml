@@ -6,4 +6,4 @@ namespace: elastic-stack-logging
 configMapGenerator:
 - name: logstash-pipeline-s3
   files:
-    - logstash.conf
+    - s3.conf
