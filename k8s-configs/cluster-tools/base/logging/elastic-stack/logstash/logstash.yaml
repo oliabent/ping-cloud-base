@@ -176,7 +176,7 @@ spec:
               protocol: TCP
             - containerPort: 8080
               name: http-log-input
-            - containerPort: 8086
+            - containerPort: 8081
               name: http-s3-input
               protocol: TCP
           volumeMounts:
@@ -306,7 +306,7 @@ spec:
       name: http-log-input
     - port: 9198
       name: metrics
-    - port: 8086
+    - port: 8081
       name: http-s3-input
     
 
