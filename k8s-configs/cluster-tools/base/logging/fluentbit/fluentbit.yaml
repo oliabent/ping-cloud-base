@@ -86,16 +86,6 @@ spec:
             add:
               - CAP_FOWNER
         env:
-            - name: AWS_REGION
-              valueFrom:
-                configMapKeyRef:
-                  name: cluster-info
-                  key: logs.region
-            - name: CLUSTER_NAME
-              valueFrom:
-                configMapKeyRef:
-                  name: cluster-info
-                  key: cluster.name
             - name: READ_FROM_HEAD
               valueFrom:
                 configMapKeyRef:

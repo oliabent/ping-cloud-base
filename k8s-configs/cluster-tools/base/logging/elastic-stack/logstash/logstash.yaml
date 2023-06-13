@@ -137,6 +137,11 @@ spec:
                 configMapKeyRef:
                   name: cluster-info
                   key: logs.region
+            - name: CLUSTER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: cluster-info
+                  key: cluster.name
           envFrom:
             - configMapRef:
                 name: elk-environment-variables
