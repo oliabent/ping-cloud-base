@@ -12,5 +12,5 @@ data:
       path.config: "/usr/share/logstash/pipeline/customer"
     - pipeline.id: s3
       path.config: "/usr/share/logstash/pipeline/s3"
-    - pipeline.id: cloudwatch
-      path.config: "/usr/share/logstash/pipeline/cloudwatch"
+    # - pipeline.id: cloudwatch
+    #   path.config: "/usr/share/logstash/pipeline/cloudwatch"
