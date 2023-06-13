@@ -178,6 +178,8 @@ spec:
               name: http-log-input
             - containerPort: 8081
               name: http-s3-input
+            - containerPort: 8082
+              name: http-cw-input
               protocol: TCP
           volumeMounts:
             - name: logstash-pipelines
@@ -192,6 +194,9 @@ spec:
               readOnly: true
             - name: logstash-pipeline-s3
               mountPath: /usr/share/logstash/pipeline/s3
+              readOnly: true
+            - name: logstash-pipeline-cw
+              mountPath: /usr/share/logstash/pipeline/cloudwatch
               readOnly: true
             - name: logstash-search-template
               mountPath: /etc/logstash/templates
@@ -252,6 +257,9 @@ spec:
         - name: logstash-pipeline-s3
           configMap:
             name: logstash-pipeline-s3
+        - name: logstash-pipeline-cw
+          configMap:
+            name: logstash-pipeline-cw
         - name: logstash-pipelines
           configMap:
             name: logstash-pipelines
@@ -308,6 +316,8 @@ spec:
       name: metrics
     - port: 8081
       name: http-s3-input
+    - port: 8082
+      name: http-cw-input
     
 
 ---
