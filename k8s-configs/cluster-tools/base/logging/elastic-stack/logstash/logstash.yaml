@@ -102,7 +102,7 @@ spec:
             - name: LOG_FORMAT
               value: json
             - name: PIPELINE_BATCH_SIZE
-              value: '1000'
+              value: '100'
             - name: PIPELINE_ECS_COMPATIBILITY
               value: disabled
             - name: PIPELINE_ORDERED
