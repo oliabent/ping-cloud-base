@@ -158,7 +158,7 @@ spec:
             failureThreshold: 10
             httpGet:
               path: /
-              port: 8082
+              port: 8080
             initialDelaySeconds: 30
             periodSeconds: 10
             successThreshold: 3
