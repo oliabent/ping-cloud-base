@@ -10,6 +10,8 @@
 - Replace ElasticSearch and Kibana by OpenSearch stack
 - Add OpenSearch monitoring and alerting
 - Improve logstash grok patterns to prevent execution timeouts
+- Update prometheus alerts with links to the runbooks
+- Move S3, CloudWarch, Newrelic outputs from Fluentbit to Logstash pipelines
 
 _Changes:_
 
@@ -26,7 +28,9 @@ _Changes:_
 - [X] PDO-5244 OpenSearch migration: Enable transport layer security
 - [X] PDO-5245 OpenSearch migration: Update grafana dashboards datasource
 - [X] PDO-5246 Opensearch migration: Migrate alerts
+- [X] PDO-5254 Move all external outputs from Fluentbit to Logstash pipelines
 - [X] PDO-5258 OpenSearch migration: Refactor bootstrap scripts
+- [X] PDO-5270 Replace all  long alerts descriptions by short ones with links to runbook
 - [X] PDO-5301 Logstash: Improve grok patterns to prevent execution timeouts
 - [X] PDO-5307 OpenSearch migration: Implement Monitoring
 - [X] PDO-5314 Update bootstrap to create davinci-configuration secret
