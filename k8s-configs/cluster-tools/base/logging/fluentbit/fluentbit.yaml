@@ -29,9 +29,10 @@ rules:
   - apiGroups: [""]
     resources:
       - namespaces
-      - nodes/proxy
       - pods
       - pods/logs
+      - nodes
+      - nodes/proxy
     verbs: ["get", "list", "watch"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -148,6 +149,8 @@ spec:
           mountPath: /var/log/dmesg
           readOnly: true
       terminationGracePeriodSeconds: 10
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
       volumes:
       - name: fluentbitstate
         hostPath:
