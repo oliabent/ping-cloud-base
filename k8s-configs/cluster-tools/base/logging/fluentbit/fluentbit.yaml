@@ -29,6 +29,7 @@ rules:
   - apiGroups: [""]
     resources:
       - namespaces
+      - nodes/proxy
       - pods
       - pods/logs
     verbs: ["get", "list", "watch"]
