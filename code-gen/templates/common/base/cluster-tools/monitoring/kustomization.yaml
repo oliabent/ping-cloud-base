@@ -39,7 +39,7 @@ patchesStrategicMerge:
 
 ### CloudWatch Agent service account ###
 - |-
-# Add IRSA role annotation to all Argo Service Accounts
+# Add IRSA role annotation to CloudWatch Agent service account
 apiVersion: v1
 kind: ServiceAccount
 metadata:
