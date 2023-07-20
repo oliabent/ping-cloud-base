@@ -1,5 +1,5 @@
 {
-   "name": "PingFederate Invalid Request Parameter",
+   "name": "PingFederate Invalid",
    "type": "monitor",
    "monitor_type": "bucket_level_monitor",
    "enabled": true,
@@ -51,8 +51,8 @@
                           }
                         },
                         {
-                           "term": {
-                             "logLevel.keyword": "ERROR"
+                          "term": {
+                            "logLevel.keyword": "ERROR"
                            }
                          },
                          {
@@ -88,7 +88,7 @@
                     "name": "CUSTOMERHUB",
                     "destination_id": "sns_customerhub",
                     "message_template": {
-                      "source": "{\n  \"alert\": \"{{ctx.monitor.name}}\",\n  \"documents\": {{ctx.results.0.hits.total.value}},\n  \"cluster\": \"{{#ctx.newAlerts}}{{bucket_keys}}{{/ctx.newAlerts}}{{#ctx.dedupedAlerts}}{{bucket_keys}}{{/ctx.dedupedAlerts}}\",\n  \"timestamp\": \"{{ctx.periodEnd}}\",\n  \"runbook\": \"https://pingidentity.atlassian.net/wiki/spaces/ST/pages/154796212/ALERT+PingFederate+Invalid+Request+Parameter+in+CDE\"\n}",
+                      "source": "{\n  \"alert\": \"{{ctx.monitor.name}}\",\n  \"documents\": {{ctx.results.0.hits.total.value}},\n  \"cluster\": \"{{#ctx.newAlerts}}{{bucket_keys}}{{/ctx.newAlerts}}{{#ctx.dedupedAlerts}}{{bucket_keys}}{{/ctx.dedupedAlerts}}\",\n  \"timestamp\": \"{{ctx.periodEnd}}\",\n  \"runbook\": \"https://pingidentity.atlassian.net/wiki/spaces/ST/pages/154992810/ALERT+PingFederate+Authn+Exception+in+CDE\"\n}",
                       "lang": "mustache"
                     },
                     "throttle_enabled": false,

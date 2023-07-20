@@ -236,6 +236,8 @@ spec:
           value: "opensearch-cluster-hot-0,opensearch-cluster-hot-1,opensearch-cluster-hot-2,"
         - name: discovery.seed_hosts
           value: "opensearch-cluster-headless"
+        - name: rootLogger.level
+          value: "debug"
         - name: cluster.name
           value: "opensearch-cluster"
         - name: node.attr.temp
