@@ -103,7 +103,7 @@
                     },
                     "throttle_enabled": false,
                     "subject_template": {
-                      "source": "ALERT: {{ctx.monitor.name}} in {{#ctx.newAlerts}}{{bucket_keys}}{{/ctx.newAlerts}}{{#ctx.dedupedAlerts}}{{bucket_keys}}{{/ctx.dedupedAlerts}}",
+                      "source": "ALERT: {{ctx.monitor.name}}",
                       "lang": "mustache"
                     },
                     "action_execution_policy": {
@@ -126,7 +126,7 @@
                     },
                     "throttle_enabled": false,
                     "subject_template": {
-                      "source": "ALERT: {{ctx.monitor.name}} in {{#ctx.newAlerts}}{{bucket_keys}}{{/ctx.newAlerts}}{{#ctx.dedupedAlerts}}{{bucket_keys}}{{/ctx.dedupedAlerts}}",
+                      "source": "ALERT: {{ctx.monitor.name}}",
                       "lang": "mustache"
                     },
                     "action_execution_policy": {
