@@ -944,7 +944,7 @@ if test ! "${KNOWN_HOSTS_CLUSTER_STATE_REPO}"; then
 fi
 export KNOWN_HOSTS_CLUSTER_STATE_REPO
 
-get_is_myping_variable '/pcpt/customer/sso/is-myping'
+get_is_myping_variable "${CUSTOMER_SSO_SSM_PATH_PREFIX}/is-myping"
 
 # Set some product specific variables
 export USER_BASE_DN="${USER_BASE_DN:-dc=example,dc=com}"
