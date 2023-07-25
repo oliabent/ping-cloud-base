@@ -39,7 +39,7 @@
                         {
                            "range": {
                               "@timestamp": {
-                                 "gte": "{{period_end}}||-1m",
+                                 "gte": "{{period_end}}||-90s",
                                  "lte": "{{period_end}}",
                                  "format": "epoch_millis"
                               }
