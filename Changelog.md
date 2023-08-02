@@ -42,6 +42,7 @@
 
 _Changes:_
 
+- [X] PDO-4264 Adjust karpenter deployment following the Beluga/Versent integration test.
 - [X] PDO-4606 Create a new init container to upgrade PA and PA-WAS and mount volume to admin pod once upgrade is successful
 - [X] PDO-4779 Modify seal.sh script to work for microservices
 - [X] PDO-4857 Add Beluga Tools code-gen directory to PCB
