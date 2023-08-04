@@ -314,6 +314,7 @@ bootstrap:
     - "cluster:admin/opendistro/ism/*"
     - "cluster:admin/opensearch/notifications/*"
     - "cluster:admin/opendistro/alerting/*"
+    - "cluster:admin/reroute"
     - "kibana_all_write"
     - "kibana_all_read"
     - 'indices:data/write/bulk'
