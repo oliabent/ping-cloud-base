@@ -14,7 +14,7 @@
                     {
                         "state_name": "RO",
                         "conditions": {
-                            "min_index_age": "7d"
+                            "min_index_age": "5m"
                         }
                     }
                 ]

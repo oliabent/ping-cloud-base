@@ -325,6 +325,8 @@ bootstrap:
         - 'indices:admin/opensearch/ism/*'
         - 'indices:admin/index_template/*'
         - 'indices:admin/template/*'
+        - 'indices:admin/settings/update'
+        - 'indices:admin/delete'
         - 'read'
         - 'indices_monitor'
     - index_patterns:
