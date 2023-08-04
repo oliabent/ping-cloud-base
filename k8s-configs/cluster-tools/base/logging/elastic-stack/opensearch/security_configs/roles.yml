@@ -319,6 +319,7 @@ bootstrap:
     - "kibana_all_read"
     - 'indices:data/write/bulk'
     - "indices:data/read/mget"
+    - 'indices:data/write/index'
   index_permissions:
     - index_patterns:
         - '*'
