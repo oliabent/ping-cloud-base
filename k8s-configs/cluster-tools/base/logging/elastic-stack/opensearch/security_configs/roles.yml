@@ -329,6 +329,7 @@ bootstrap:
         - 'indices:admin/template/*'
         - 'indices:admin/settings/update'
         - 'indices:admin/delete'
+        - 'indices:data/write/index'
         - 'read'
         - 'indices_monitor'
     - index_patterns:
