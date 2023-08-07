@@ -320,6 +320,7 @@ bootstrap:
     - 'indices:data/write/bulk'
     - "indices:data/read/mget"
     - 'indices:data/write/index'
+    - 'indices:data/write/update'
   index_permissions:
     - index_patterns:
         - '*'
@@ -331,6 +332,7 @@ bootstrap:
         - 'indices:admin/delete'
         - 'indices:data/write/index'
         - 'indices:data/write/bulk*'
+        - 'indices:data/write/update'
         - 'read'
         - 'indices_monitor'
     - index_patterns:
