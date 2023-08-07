@@ -14,7 +14,7 @@
                     {
                         "state_name": "store",
                         "conditions": {
-                            "min_index_age": "5m"
+                            "min_index_age": "1m"
                         }
                     }
                 ]
