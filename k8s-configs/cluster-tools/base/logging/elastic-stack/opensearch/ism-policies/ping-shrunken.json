@@ -58,7 +58,7 @@
                     {
                         "state_name": "delete",
                         "conditions": {
-                            "min_index_age": "1m"
+                            "min_index_age": "180d"
                         }
                     }
                 ]
