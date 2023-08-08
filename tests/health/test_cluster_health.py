@@ -2,7 +2,6 @@ import unittest, requests, os
 
 from health_common import Categories, TestHealthBase
 
-@unittest.skipIf(os.environ.get('ENV_TYPE') == "customer-hub", "Customer-hub CDE detected, skipping test")
 class TestClusterHealth(TestHealthBase):
     deployment_name = "healthcheck-cluster-health"
     cluster_health = "clusterHealth"
@@ -30,6 +29,7 @@ class TestClusterHealth(TestHealthBase):
         res = [key for key in self.test_results if "node" in key]
         self.assertTrue(len(res) > 0, "No node checks found in health check results")
 
+    @unittest.skipIf(os.environ.get('ENV_TYPE') == "customer-hub", "Customer-hub CDE detected, skipping test")
     def test_health_check_has_stateful_set_results(self):
         res = [key for key in self.test_results if "statefulset" in key]
         self.assertTrue(

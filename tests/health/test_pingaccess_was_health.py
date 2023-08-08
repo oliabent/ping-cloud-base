@@ -2,7 +2,6 @@ import requests, unittest, os
 
 from health_common import Categories, TestHealthBase
 
-@unittest.skipIf(os.environ.get('ENV_TYPE') == "customer-hub", "Customer-hub CDE detected, skipping test")
 class TestPingAccessWASHealth(TestHealthBase):
     deployment_name = "healthcheck-pingaccess-was"
     label = f"role={deployment_name}"
