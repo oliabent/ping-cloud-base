@@ -1,4 +1,4 @@
-import unittest, requests, os
+import unittest, requests, re
 
 from health_common import Categories, TestHealthBase
 
@@ -70,14 +70,10 @@ class TestClusterHealth(TestHealthBase):
             self.test_results.keys(),
         )
 
-    @unittest.skipIf(
-        os.environ.get("ENV_TYPE") == "customer-hub",
-        "Customer-hub CDE detected, skipping test",
-    )
     def test_health_check_has_statefulset_pods_ready_results(self):
-        self.assertIn(
-            "All pods in statefulset pingdirectory are Ready", self.test_results.keys()
-        )
+        pattern = re.compile("All pods in statefulset [a-z-a-z]+ are Ready")
+        self.assertTrue(any(pattern.match(test_name) for test_name in self.test_results.keys()))
+
 
 
 if __name__ == "__main__":
