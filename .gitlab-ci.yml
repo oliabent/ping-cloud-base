@@ -145,7 +145,7 @@ integration-tests:
     matrix:
       - TEST: *all-tests
   rules:
-    - if: '$ENV_TYPE == "dev" && $CI_PIPELINE_SOURCE != "schedule"'
+    - if:  '$ENV_TYPE == null && $CI_PIPELINE_SOURCE != "schedule"'
       when: always
 
 integration-tests-scheduled-pipeline:
