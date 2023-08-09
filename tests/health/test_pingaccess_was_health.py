@@ -2,6 +2,7 @@ import requests, unittest, os
 
 from health_common import Categories, TestHealthBase
 
+
 class TestPingAccessWASHealth(TestHealthBase):
     deployment_name = "healthcheck-pingaccess-was"
     label = f"role={deployment_name}"
