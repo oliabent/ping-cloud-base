@@ -55,7 +55,6 @@ deploy:
     - default-gitlab-runner
   image: ${K8S_DEPLOY_TOOLS}
   script:
-    - echo "ENV_TYPE ${ENV_TYPE}"
     - ${SHARED_CI_SCRIPTS_DIR}/k8s/deploy/deploy.sh
   dependencies:
     - find-cluster
@@ -126,7 +125,6 @@ pa-was-integration-tests:
   image: ${K8S_DEPLOY_TOOLS}
   script:
     - export SKIP_TESTS="${BRANCH_SKIP_TESTS}"
-    - echo "ENV_TYPE ${ENV_TYPE}"
     - ${SHARED_CI_SCRIPTS_DIR}/test/run-tests.sh ${TEST}
   dependencies:
     - find-cluster
@@ -173,7 +171,6 @@ chaos-tests:
     - default-gitlab-runner
   image: ${K8S_DEPLOY_TOOLS}
   script:
-    - echo "ENV_TYPE ${ENV_TYPE}"
     - ${SHARED_CI_SCRIPTS_DIR}/test/run-tests.sh chaos
   dependencies:
     - find-cluster
