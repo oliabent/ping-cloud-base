@@ -38,6 +38,7 @@
 - Update cluster-autoscaler v1.27.0/1.27.1 for eks 1.27
 - Healthcheck pods respond properly to SIGTERM
 - Update PCB with new Radius Proxy Image
+- Unify severity format for all prometheus alerts
 - Add p1as-beluga-tools microservice to PCB
 - Create PD init container for KMS
 
@@ -102,10 +103,11 @@ _Changes:_
 - [X] PDO-5724 Limit backup/restore logging for PD
 - [X] PDO-5741 OS: Index migration fails for shrink-*-logstash-* indexes
 - [X] PDO-5770 Update update-profile-repo script for MonoRepo
+- [X] PDO-5774 OS Index Policies: State Transitions Errors
+- [X] PDO-5797 Unify severity format for all prometheus alerts
 - [X] PDO-5800 Update pd.profile to align with PingDirectory upgrade
 - [X] PDO-5801 Update cluster-autoscaler v1.27.0/1.27.1 for eks 1.27
 - [X] PDO-5813 Remove excessive patches for the second region
-- [X] PDO-5774 OS Index Policies: State Transitions Errors
 - [X] PDO-5835 Create PD init container for KMS
 
 ### 1.18.0.0
