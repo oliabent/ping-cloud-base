@@ -39,7 +39,7 @@ patchesStrategicMerge:
           - name: controller
             env:
               - name: DISABLE_WEBHOOK
-                value: true
+                value: "true"
             resources:
               # The resource requirements vary based on the size of the cluster, and during consolidation, they are extensively utilized.
               # As the cluster size increases, it becomes necessary to reassess these limits.
