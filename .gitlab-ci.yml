@@ -144,9 +144,10 @@ integration-tests:
   parallel:
     matrix:
       - TEST: *all-tests
-  rules:
-    - if:  '$ENV_TYPE == null && $CI_PIPELINE_SOURCE != "schedule"'
-      when: always
+  only:
+    variables:
+      - $ENV_TYPE == "null"
+      - $CI_PIPELINE_SOURCE != "schedule"
 
 integration-tests-scheduled-pipeline:
   extends: .integration-tests-base
@@ -155,9 +156,10 @@ integration-tests-scheduled-pipeline:
   parallel:
     matrix:
       - TEST: *schedule-tests
-  rules:
-    - if: '$ENV_TYPE != "customer-hub" && $CI_PIPELINE_SOURCE == "schedule"'
-      when: always
+  only:
+    variables:
+      - $ENV_TYPE != "customer-hub"
+      - $CI_PIPELINE_SOURCE == "schedule"
 
 integration-tests-chub:
   extends: .integration-tests-base
@@ -166,9 +168,9 @@ integration-tests-chub:
   parallel:
     matrix:
       - TEST: *chub-tests
-  rules:
-  - if: '$ENV_TYPE == "customer-hub"'
-    when: always
+  only:
+    variables:
+      - $ENV_TYPE == "customer-hub"
       
 ## Chaos testing stage ##
 chaos-tests:
