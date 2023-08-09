@@ -91,6 +91,33 @@ pa-was-integration-tests:
   - health
   - pingone
 
+#################################################
+# All integration tests defined to run on the  #
+# traditionally deployed P1AS                  #
+################################################
+.schedule-tests: &schedule-tests
+  - pingdirectory
+  - pingdelegator
+  - pingfederate
+  - pingaccess
+  - pingcloud-services
+  - pingdatasync
+  - common
+  - monitoring
+  - health
+  - pingone
+
+################################################
+# All integration tests defined to run on the  #
+# traditionally deployed P1AS                  #
+################################################
+.chub-tests: &chub-tests
+  - pingcloud-services
+  - pingcentral
+  - common
+  - monitoring
+  - health
+  
 .integration-tests-base:
   variables:
     TEST: ""
@@ -117,7 +144,32 @@ integration-tests:
   parallel:
     matrix:
       - TEST: *all-tests
+  rules:
+    - if: '${ENV_TYPE} == "dev" && $CI_PIPELINE_SOURCE != "schedule"'
+      when: always
 
+integration-tests-scheduled-pipeline:
+  extends: .integration-tests-base
+  variables:
+    TEST: ${TEST}
+  parallel:
+    matrix:
+      - TEST: *schedule-tests
+  rules:
+    - if: '${ENV_TYPE} != "customer-hub" && $CI_PIPELINE_SOURCE == "schedule"'
+      when: always
+
+integration-tests-chub:
+  extends: .integration-tests-base
+  variables:
+    TEST: ${TEST}
+  parallel:
+    matrix:
+      - TEST: *chub-tests
+  rules:
+  - if: '${ENV_TYPE} == "customer-hub"'
+    when: always
+      
 ## Chaos testing stage ##
 chaos-tests:
   stage: chaos
