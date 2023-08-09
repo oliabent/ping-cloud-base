@@ -1,0 +1,36 @@
+# This patch file will remove the Karpenter resources from the deployment.
+$patch: delete
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: default
+---
+$patch: delete
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: default
+---
+$patch: delete
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: pd-only
+---
+$patch: delete
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: pd-only
+---
+$patch: delete
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: pgo-only
+---
+$patch: delete
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: pgo-only

@@ -59,3 +59,6 @@ patchesStrategicMerge:
       karpenter.sh/discovery: "${TENANT_NAME}"
     subnetSelector:
       karpenter.sh/discovery: "${TENANT_NAME}"
+
+# To enable Karpenter to take over the deployment of nodes, you need to remove the specific line below.
+- disable-karpenter.yaml
