@@ -52,6 +52,10 @@ spec:
           requests:
             cpu: 100m
             memory: 2000Mi
+        lifecycle:
+          preStop:
+            exec:
+              command: ["sh", "-c", "echo 'Waiting for 10 seconds before termination...' && sleep 10"]
       volumes:
       - name: prometheus-config-volume
         configMap:
