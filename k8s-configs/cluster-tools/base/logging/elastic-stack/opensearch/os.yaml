@@ -3,16 +3,6 @@ kind: StatefulSet
 metadata:
   name: opensearch-cluster-hot
 spec:
-  volumeClaimTemplates:
-    - metadata:
-        name: data
-      spec:
-        accessModes:
-          - "ReadWriteOnce"
-        resources:
-          requests:
-            storage: "50Gi"
-        storageClassName: "opensearch-gp3"
   template:
     spec:
       containers:
