@@ -37,11 +37,11 @@ spec:
             - name: cluster.indices.replication.strategy
               value: "SEGMENT"
           args:
-          - opensearch
-          - -p
-          - /usr/share/opensearch/os.pid
+            - opensearch
+            - -p
+            - /usr/share/opensearch/os.pid
           command:
-          - /usr/share/opensearch/opensearch-docker-entrypoint.sh
+            - /usr/share/opensearch/opensearch-docker-entrypoint.sh
           lifecycle:
             preStop:
               exec:
