@@ -1,0 +1,107 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: opensearch-cluster-hot
+spec:
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "50Gi"
+        storageClassName: "opensearch-gp3"
+  template:
+    spec:
+      containers:
+        - name: opensearch
+          env:
+            - name: indices.recovery.max_bytes_per_sec
+              value: "500mb"
+            - name: indices.recovery.max_concurrent_file_chunks
+              value: "6"
+            - name: indices.recovery.max_concurrent_operations
+              value: "6"
+            - name: cluster.routing.allocation.node_concurrent_recoveries
+              value: "6"
+            - name: cluster.routing.allocation.cluster_concurrent_rebalance
+              value: "6"
+            - name: cluster.routing.allocation.node_initial_primaries_recoveries
+              value: "8"
+            - name: cluster.routing.allocation.balance.prefer_primary
+              value: "true"
+            - name: segrep.pressure.enabled
+              value: "true"
+            - name: cluster.indices.replication.strategy
+              value: "SEGMENT"
+          args:
+          - opensearch
+          - -p
+          - /usr/share/opensearch/os.pid
+          command:
+          - /usr/share/opensearch/opensearch-docker-entrypoint.sh
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - sh
+                  - "-c"
+                  - "kill $(cat /usr/share/opensearch/os.pid)"
+          startupProbe:
+            failureThreshold: 30
+            initialDelaySeconds: 120
+            periodSeconds: 10
+            tcpSocket:
+              port: 9200
+            timeoutSeconds: 3
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: opensearch-cluster-warm
+spec:
+  template:
+    spec:
+      containers:
+        - name: opensearch
+          env:
+            - name: indices.recovery.max_bytes_per_sec
+              value: "500mb"
+            - name: indices.recovery.max_concurrent_file_chunks
+              value: "6"
+            - name: indices.recovery.max_concurrent_operations
+              value: "6"
+            - name: cluster.routing.allocation.node_concurrent_recoveries
+              value: "6"
+            - name: cluster.routing.allocation.cluster_concurrent_rebalance
+              value: "6"
+            - name: cluster.routing.allocation.node_initial_primaries_recoveries
+              value: "8"
+            - name: cluster.routing.allocation.balance.prefer_primary
+              value: "true"
+            - name: segrep.pressure.enabled
+              value: "true"
+            - name: cluster.indices.replication.strategy
+              value: "SEGMENT"
+          args:
+            - opensearch
+            - -p
+            - /usr/share/opensearch/os.pid
+          command:
+            - /usr/share/opensearch/opensearch-docker-entrypoint.sh
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - sh
+                  - "-c"
+                  - "kill $(cat /usr/share/opensearch/os.pid)"
+          startupProbe:
+            failureThreshold: 30
+            initialDelaySeconds: 120
+            periodSeconds: 10
+            tcpSocket:
+              port: 9200
+            timeoutSeconds: 3
