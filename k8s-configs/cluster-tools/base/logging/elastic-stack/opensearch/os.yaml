@@ -21,9 +21,9 @@ spec:
             - name: indices.recovery.max_bytes_per_sec
               value: "500mb"
             - name: indices.recovery.max_concurrent_file_chunks
-              value: "6"
+              value: "5"
             - name: indices.recovery.max_concurrent_operations
-              value: "6"
+              value: "4"
             - name: cluster.routing.allocation.node_concurrent_recoveries
               value: "6"
             - name: cluster.routing.allocation.cluster_concurrent_rebalance
@@ -70,9 +70,9 @@ spec:
             - name: indices.recovery.max_bytes_per_sec
               value: "500mb"
             - name: indices.recovery.max_concurrent_file_chunks
-              value: "6"
+              value: "5"
             - name: indices.recovery.max_concurrent_operations
-              value: "6"
+              value: "4"
             - name: cluster.routing.allocation.node_concurrent_recoveries
               value: "6"
             - name: cluster.routing.allocation.cluster_concurrent_rebalance
