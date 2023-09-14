@@ -16,15 +16,15 @@ spec:
   updateStrategy:
     type: RollingUpdate
   volumeClaimTemplates:
-  - metadata:
-      name: data
-    spec:
-      accessModes:
-      - "ReadWriteOnce"
-      resources:
-        requests:
-          storage: "8Gi"
-      storageClassName: "efs"
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: "50Gi"
+        storageClassName: "opensearch-gp3"
   template:
     metadata:
       name: "opensearch-cluster-hot"
