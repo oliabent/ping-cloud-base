@@ -67,10 +67,10 @@ spec:
         app: prometheus
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "opensearch-gp3"
+      storageClassName: efs
       resources:
         requests:
-          storage: "20Gi"
+          storage: 1Mi
 
 ---
 
