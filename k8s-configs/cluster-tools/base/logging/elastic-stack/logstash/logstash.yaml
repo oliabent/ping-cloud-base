@@ -311,10 +311,10 @@ spec:
       spec:
         accessModes:
           - ReadWriteOnce
-        storageClassName: efs
+        storageClassName: "opensearch-gp3"
         resources:
           requests:
-            storage: 1Mi
+            storage: "20Gi"
 
 
 ---
