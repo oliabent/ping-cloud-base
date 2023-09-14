@@ -18,10 +18,3 @@ resources:
 - notifications
 - bootstrap.yaml
 
-#PDO-6099opensearch POC
-- sc.yaml
-
-patchesStrategicMerge:
-  - os.yaml
-
-
