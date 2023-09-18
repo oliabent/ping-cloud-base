@@ -4,7 +4,7 @@ metadata:
   name: logstash-elastic
 spec:
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1
     kind: StatefulSet
@@ -13,7 +13,7 @@ spec:
     scaleDown:
       stabilizationWindowSeconds: 120
     scaleUp:
-      stabilizationWindowSeconds: 60
+      stabilizationWindowSeconds: 50
   metrics:
   - type: Resource
     resource:
