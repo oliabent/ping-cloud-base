@@ -18,4 +18,4 @@ data:
       path.config: "/usr/share/logstash/pipeline/newrelic"
     - pipeline.id: dlq
       path.config: "/usr/share/logstash/pipeline/dlq"
-      pipeline.workers: 1
+      pipeline.workers: 3
