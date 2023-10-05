@@ -19,6 +19,8 @@ spec:
             - name: LS_JAVA_OPTS
               value: '-Xms3g -Xmx3g'
             - name: PIPELINE_WORKERS
-              value: "20"
+              value: "32"
+            - name: LOG_LEVEL
+              value: "info"
             - name: PIPELINE_BATCH_SIZE
               value: "1500"
