@@ -4,4 +4,4 @@ metadata:
   name: logstash-elastic
 spec:
   minReplicas: 1
-  maxReplicas: 1
+  maxReplicas: 2
