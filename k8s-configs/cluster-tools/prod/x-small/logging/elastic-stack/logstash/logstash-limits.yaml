@@ -11,13 +11,13 @@ spec:
           resources:
             limits:
               cpu: "1"
-              memory: 6Gi
+              memory: 4Gi
             requests:
               cpu: "1"
-              memory: 6Gi
+              memory: 4Gi
           env:
             - name: LS_JAVA_OPTS
-              value: '-Xms4g -Xmx4g'
+              value: '-Xms3g -Xmx3g'
             - name: PIPELINE_WORKERS
               value: "24"
             - name: PIPELINE_BATCH_SIZE
