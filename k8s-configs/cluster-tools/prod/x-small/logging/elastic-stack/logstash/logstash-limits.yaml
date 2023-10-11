@@ -19,6 +19,6 @@ spec:
             - name: LS_JAVA_OPTS
               value: '-Xms4g -Xmx4g'
             - name: PIPELINE_WORKERS
-              value: "28"
+              value: "24"
             - name: PIPELINE_BATCH_SIZE
               value: "1500"
