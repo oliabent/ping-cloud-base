@@ -7,7 +7,7 @@ metadata:
 data:
   cluster.name: cluster_name
   logs.region: region_name
-  log.level: "error"
+  log.level: "info" #delete after debug
   read.head: "True"
   read.tail: "Off"
   tenant_domain: tenant_domain
@@ -64,6 +64,7 @@ spec:
     metadata:
       labels:
         k8s-app: fluent-bit
+        pod-reaper: enabled
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/scheme: "http"
@@ -124,9 +125,6 @@ spec:
           successThreshold: 1
           timeoutSeconds: 5
         resources:
-            limits:
-              cpu: "1"
-              memory: 1Gi
             requests:
               cpu: 200m
               memory: 100Mi
