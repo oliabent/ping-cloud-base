@@ -215,7 +215,6 @@ patches:
           - --annotations-prefix=nginx.ingress.kubernetes.io
           - --http-port=8080
           - --https-port=8443
-          - --v=5
     - op: replace
       path: /spec/template/spec/containers/0/resources
       value:
