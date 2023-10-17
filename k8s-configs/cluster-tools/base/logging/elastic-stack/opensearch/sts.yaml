@@ -18,8 +18,6 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: data
-      annotations:
-        volume.autoscaler.kubernetes.io/ignore: "true"
     spec:
       accessModes:
       - "ReadWriteOnce"
