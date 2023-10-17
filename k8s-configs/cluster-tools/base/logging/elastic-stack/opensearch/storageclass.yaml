@@ -21,8 +21,6 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: opensearch-gp3
-  annotations:
-    volume.autoscaler.kubernetes.io/ignore: "true"  
   labels:
     app: opensearch
 allowVolumeExpansion: true
