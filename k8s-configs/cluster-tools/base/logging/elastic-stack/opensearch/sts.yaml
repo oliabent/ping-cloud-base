@@ -19,8 +19,8 @@ spec:
   - metadata:
       name: data
       annotations:
-      volume.autoscaler.kubernetes.io/scale-above-percent: "10"
-      volume.autoscaler.kubernetes.io/scale-up-percent: "5"
+        volume.autoscaler.kubernetes.io/scale-above-percent: "10"
+        volume.autoscaler.kubernetes.io/scale-up-percent: "5"
 
     spec:
       accessModes:
