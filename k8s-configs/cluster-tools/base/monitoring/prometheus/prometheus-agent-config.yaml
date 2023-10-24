@@ -35,10 +35,6 @@ data:
     - job_name: 'kube-state-metrics'
       static_configs:
       - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
-    # Monitor karpenter
-    - job_name: 'karpenter'
-      static_configs:
-      - targets: ['karpenter.karpenter.svc.cluster.local:8000/metrics']
     
 
     # Discover and monitor PD instances
