@@ -35,7 +35,6 @@ data:
     - job_name: 'kube-state-metrics'
       static_configs:
       - targets: ['kube-state-metrics.kube-system.svc.cluster.local:8080']
-    
 
     # Discover and monitor PD instances
     - job_name: 'pd-statsd-exporter'
