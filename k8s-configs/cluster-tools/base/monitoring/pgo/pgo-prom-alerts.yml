@@ -76,11 +76,11 @@ groups:
 #      description: 'Connection metric is absent from target (Prod). Check that postgres_exporter can connect to PostgreSQL.'
 
 
-## Optional monitor for changes to pg_settings (postgresql.conf) system catalog.
-## A similar metric is available for monitoring pg_hba.conf. See ccp_hba_settings_checksum().
-## If metric returns 0, then NO settings have changed for either pg_settings since last known valid state
-## If metric returns 1, then pg_settings have changed since last known valid state
-## To see what may have changed, check the monitor.pg_settings_checksum table for a history of config state.
+# Optional monitor for changes to pg_settings (postgresql.conf) system catalog.
+# A similar metric is available for monitoring pg_hba.conf. See ccp_hba_settings_checksum().
+# If metric returns 0, then NO settings have changed for either pg_settings since last known valid state
+# If metric returns 1, then pg_settings have changed since last known valid state
+# To see what may have changed, check the monitor.pg_settings_checksum table for a history of config state.
 #  - alert: PGSettingsChecksum
 #    expr: ccp_pg_settings_checksum_status > 0
 #    for 60s
@@ -89,21 +89,21 @@ groups:
 #      severity: critical
 #      severity_num: 300
 #    annotations:
-#      description: 'Configuration settings on {{ $labels.job }} have changed from previously known valid state. To reset current config to a valid state after alert fires, run monitor.pg_settings_checksum_set_valid().'
+#      description: 'Configuration settings on {{ $labels.cluster }} have changed from previously known valid state. To reset current config to a valid state after alert fires, run monitor.pg_settings_checksum_set_valid().'
 #      summary: 'PGSQL Instance settings checksum'
 
 
-## Monitor for data block checksum failures. Only works in PG12+
-# - alert: PGDataChecksum
-#   expr: ccp_postgresql_version_current >= 120000 and ccp_data_checksum_failure_count > 0
-#   for: 60s
-#   labels:
-#     service: postgresql
-#     severity: critical
-#     severity_num: 300
-#   annotations:
-#     description: '{{ $labels.job }} has at least one data checksum failure in database {{ $labels.dbname }}. See pg_stat_database system catalog for more information.'
-#     summary: 'PGSQL Data Checksum failure'
+# Monitor for data block checksum failures. Only works in PG12+
+#  - alert: PGDataChecksum
+#    expr: ccp_postgresql_version_current >= 120000 and ccp_data_checksum_failure_count > 0
+#    for 60s
+#    labels:
+#      service: postgresql
+#      severity: critical
+#      severity_num: 300
+#    annotations:
+#      description: '{{ $labels.cluster }} has at least one data checksum failure in database {{ $labels.dbname }}. See pg_stat_database system catalog for more information.'
+#      summary: 'PGSQL Data Checksum failure'
 
   - alert: PGIdleTxn
     expr: ccp_connection_stats_max_idle_in_txn_time > 300
