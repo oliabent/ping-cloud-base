@@ -342,14 +342,14 @@ groups:
 #
 # Runtime monitoring is handled with a single metric:
 #
-#   ccp_backrest_last_runtime_backup_runtime_seconds
+#   ccp_backrest_last_info_backup_runtime_seconds
 #
 # Runtime monitoring should have the "backup_type" label set.
 #   Otherwise the rule will apply to the last run of all backup types returned (full, diff, incr)
 # Stanza should also be set if runtimes per stanza have different expected times
 #
 #  - alert: PGBackRestLastRuntimeFull_main
-#    expr: ccp_backrest_last_runtime_backup_runtime_seconds{backup_type="full", stanza="main"} > 14400
+#    expr: ccp_backrest_last_info_backup_runtime_seconds{backup_type="full", stanza="main"} > 14400
 #    for: 60s
 #    labels:
 #       service: postgresql
@@ -359,7 +359,7 @@ groups:
 #       summary: 'Expected runtime of full backup for stanza [main] has exceeded 4 hours'
 #
   - alert: PGBackRestLastRuntimeDiff_main
-    expr: ccp_backrest_last_runtime_backup_runtime_seconds{backup_type="diff", stanza="db", role="master"} > 3600
+    expr: ccp_backrest_last_info_backup_runtime_seconds{backup_type="diff", stanza="db", role="master"} > 3600
     for: 60s
     labels:
        service: postgresql
