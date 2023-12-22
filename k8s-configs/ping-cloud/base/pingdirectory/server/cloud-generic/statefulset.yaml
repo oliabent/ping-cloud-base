@@ -9,7 +9,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Delete=false
 spec:
-  serviceName: default
+  serviceName: pingdirectory
   replicas: 3
   selector:
     matchLabels:
