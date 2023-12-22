@@ -6,6 +6,8 @@ metadata:
   name: pingdirectory
   labels:
     class: pingdirectory-server
+  annotations:
+    argocd.argoproj.io/sync-options: Delete=false
 spec:
   serviceName: default
   replicas: 3
