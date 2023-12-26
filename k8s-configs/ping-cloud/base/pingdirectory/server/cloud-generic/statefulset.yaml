@@ -7,7 +7,7 @@ metadata:
   labels:
     class: pingdirectory-server
 spec:
-  serviceName: default
+  serviceName: pingdirectory
   replicas: 3
   selector:
     matchLabels:
