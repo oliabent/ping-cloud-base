@@ -9,7 +9,7 @@ metadata:
   finalizers:
   - kubernetes
 spec:
-  serviceName: default
+  serviceName: pingdirectory
   replicas: 3
   selector:
     matchLabels:
