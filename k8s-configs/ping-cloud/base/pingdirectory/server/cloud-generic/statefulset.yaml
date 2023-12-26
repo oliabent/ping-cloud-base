@@ -6,8 +6,7 @@ metadata:
   name: pingdirectory
   labels:
     class: pingdirectory-server
-  annotations:
-    argocd.argoproj.io/sync-options: Delete=false
+  finalizers: kubernetes
 spec:
   serviceName: pingdirectory
   replicas: 3
