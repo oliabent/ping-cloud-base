@@ -6,8 +6,6 @@ metadata:
   name: pingdirectory
   labels:
     class: pingdirectory-server
-  finalizers:
-  - kubernetes
 spec:
   serviceName: pingdirectory
   replicas: 3
