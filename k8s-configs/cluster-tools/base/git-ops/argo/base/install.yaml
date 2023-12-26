@@ -18463,6 +18463,17 @@ rules:
 - apiGroups:
   - ""
   resources:
+  - statefulsets
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups:
+  - ""
+  resources:
   - secrets
   - configmaps
   verbs:
