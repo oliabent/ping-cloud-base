@@ -18463,17 +18463,6 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - statefulsets
-  verbs:
-  - create
-  - get
-  - list
-  - watch
-  - update
-  - patch
-- apiGroups:
-  - ""
-  resources:
   - secrets
   - configmaps
   verbs:
@@ -18653,17 +18642,6 @@ rules:
   - update
   - patch
   - delete
-- apiGroups:
-  - ""
-  resources:
-  - statefulsets
-  verbs:
-  - create
-  - get
-  - list
-  - watch
-  - update
-  - patch
 - apiGroups:
   - argoproj.io
   resources:
