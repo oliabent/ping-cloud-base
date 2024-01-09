@@ -42,11 +42,11 @@ patches:
     data:
       # Set the logging level. One of: debug|info|warn|error (default "info")
       # See https://argo-cd.readthedocs.io/en/stable/operator-manual/argocd-cmd-params-cm-yaml/ for example
-      controller.log.level: "error"
-      server.log.level: "error"
-      reposerver.log.level: "error"
-      applicationsetcontroller.log.level: "error"
-      notificationscontroller.log.level: "error"
+      controller.log.level: "info"
+      server.log.level: "info"
+      reposerver.log.level: "info"
+      applicationsetcontroller.log.level: "info"
+      notificationscontroller.log.level: "info"
 - patch: |-
     apiVersion: apps/v1
     kind: Deployment
