@@ -23,6 +23,7 @@ configMapGenerator:
       - pc-application.json
       - pc-monitor.json
       - pd-access.json
+      - pd-config-audit.json
       - pd-errors.json
       - pd-expensive-write-ops.json
       - pd-failed-ops.json
