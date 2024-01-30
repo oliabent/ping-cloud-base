@@ -32,15 +32,6 @@
             }
           }
         },
-        "category": {
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "type": "keyword",
-              "ignore_above": 256
-            }
-          }
-        },
         "cluster_name": {
           "type": "text",
           "fields": {
