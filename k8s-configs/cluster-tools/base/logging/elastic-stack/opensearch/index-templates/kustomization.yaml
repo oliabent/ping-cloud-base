@@ -11,6 +11,7 @@ configMapGenerator:
       - ingress-access.json
       - ingress-errors.json
       - pa-api-audit.json
+      - pa-api-audit_har.json
       - pa-agent-audit.json
       - pa-engine-audit.json
       - pa-pingaccess.json
