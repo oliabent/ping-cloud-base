@@ -216,22 +216,22 @@
             "_metadata": {
               "properties": {
                 "duration": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "proxyRoundTripMS": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "reqReceivedMillisec": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "reqSentMillisec": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "respReceivedMillisec": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "respSentMillisec": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "responseCode": {
                   "type": "integer"
@@ -240,13 +240,13 @@
                   "type": "integer"
                 },
                 "userInfoReqSentMillisec": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "userInfoRespReceivedMillisec": {
-                  "type": "integer"
+                  "type": "long"
                 },
                 "userInfoRoundTripMS": {
-                  "type": "integer"
+                  "type": "long"
                 }
               }
             }
