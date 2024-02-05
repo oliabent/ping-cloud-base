@@ -211,6 +211,47 @@
             }
           }
         },
+        "log": {
+          "properties": {
+            "_metadata": {
+              "properties": {
+                "duration": {
+                  "type": "integer"
+                },
+                "proxyRoundTripMS": {
+                  "type": "integer"
+                },
+                "reqReceivedMillisec": {
+                  "type": "integer"
+                },
+                "reqSentMillisec": {
+                  "type": "integer"
+                },
+                "respReceivedMillisec": {
+                  "type": "integer"
+                },
+                "respSentMillisec": {
+                  "type": "integer"
+                },
+                "responseCode": {
+                  "type": "integer"
+                },
+                "roundTripMS": {
+                  "type": "integer"
+                },
+                "userInfoReqSentMillisec": {
+                  "type": "integer"
+                },
+                "userInfoRespReceivedMillisec": {
+                  "type": "integer"
+                },
+                "userInfoRoundTripMS": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
         "tags": {
           "type": "text",
           "fields": {
