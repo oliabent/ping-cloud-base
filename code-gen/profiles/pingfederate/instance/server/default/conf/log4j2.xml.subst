@@ -226,12 +226,14 @@
         <RollingFile name="AdminEventDetailAudit" fileName="${sys:pf.log.dir}/admin-event-detail.log"
                      filePattern="${sys:pf.log.dir}/admin-event-detail.%d{yyyy-MM-dd}.log"
                      ignoreExceptions="false">
-            <PatternLayout>
-                <!-- Uncomment this if you want to use UTF-8 encoding instead
-                    of system's default encoding.
-                <charset>UTF-8</charset> -->
-                <pattern>%X{eventdetailid} | %X{filename} | %X{delta} | line %X{position} | %m{nolookups}%n</pattern>
-            </PatternLayout>
+            <JSONLayout complete="true" compact="false" eventEol="true">
+                <!-- Configure additional JSON attributes as needed -->
+                <KeyValuePair key="eventdetailid" value="$${ctx:eventdetailid}" />
+                <KeyValuePair key="filename" value="$${ctx:filename}" />
+                <KeyValuePair key="delta" value="$${ctx:delta}" />
+                <KeyValuePair key="position" value="$${ctx:position}" />
+                <KeyValuePair key="message" value="$${logEvent:message}" />
+            </JSONLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy />
             </Policies>
