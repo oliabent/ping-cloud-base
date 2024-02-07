@@ -1,6 +1,6 @@
 {
   "index_patterns": [
-    "pf-admin-event-detail-*"
+    "pd-config-audit-*"
   ],
   "template": {
     "settings": {
@@ -31,9 +31,6 @@
               "ignore_above": 256
             }
           }
-        },
-        "ldap_credentials": {
-          "type": "text"
         },
         "cluster_name": {
           "type": "text",
